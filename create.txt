@@ -1,0 +1,58 @@
+drop TABLE public.mark_item;
+drop TABLE public.sale;
+drop TABLE public.flavor;
+drop TABLE public.mark;
+
+CREATE TABLE public.mark
+(
+  id integer NOT NULL DEFAULT nextval('sq_mark'::regclass),
+  name character varying(50) NOT NULL,
+  note character varying(200),
+  start_date TIMESTAMP NOT NULL,
+  CONSTRAINT pk_mark_id PRIMARY KEY (id)
+);
+
+CREATE TABLE public.flavor
+(
+  id integer NOT NULL DEFAULT nextval('sq_flavor'::regclass),
+  id_mark integer NOT NULL ,
+  name character varying(50) NOT NULL,
+  note character varying(200),
+  start_date TIMESTAMP NOT NULL,
+  CONSTRAINT pk_flavor_id PRIMARY KEY (id),
+  CONSTRAINT fk_flavor_id FOREIGN KEY (id_mark) REFERENCES mark (id)
+);
+
+CREATE TABLE public.sale
+(
+  id integer NOT NULL DEFAULT nextval('sq_sale'::regclass),
+  adress character varying(200),
+  note character varying(200),
+  date TIMESTAMP NOT NULL,
+  CONSTRAINT pk_sale_id PRIMARY KEY (id)
+);
+
+
+CREATE TABLE public.mark_item
+(
+  id_flavor integer NOT NULL ,
+  id_sale integer NOT NULL ,
+  count integer NOT NULL ,
+  price NUMERIC(10,2),
+  rang integer,
+  note character varying(200),
+  CONSTRAINT pk_mark_item PRIMARY KEY (id_flavor, id_sale),
+  CONSTRAINT fk_mark_item_flavor_id FOREIGN KEY (id_flavor) REFERENCES mark (id),
+  CONSTRAINT fk_mark_item_sale_id FOREIGN KEY (id_sale) REFERENCES sale (id)
+);
+
+CREATE TABLE public.log_mark
+(
+  type_id integer,
+  data_in text ,
+  data_out text ,
+  note character varying(200),
+  date_event TIMESTAMP NOT NULL DEFAULT  CURRENT_TIMESTAMP
+);
+
+

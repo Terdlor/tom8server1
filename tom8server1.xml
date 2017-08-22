@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tom8server1">
+  
+  <property file="tom8server1.properties"/>
+
+  <path id="common_library">
+      <pathelement location="C:\project\tom8server1\tomcat8\lib\servlet-api.jar"/>
+      <pathelement location="C:\project\tom8server1\tomcat8\lib\simple-xml-2.7.1.jar"/>
+      <pathelement location="C:\project\tom8server1\tomcat8\lib\postgresql-42.1.1.jre6.jar"/>
+  </path>
+
+    <target name ="clean">
+     <delete  dir ="tomcat8\webapps\ROOT\WEB-INF\classes\"></delete>
+     <mkdir dir = "tomcat8\webapps\ROOT\WEB-INF\classes\"/>
+    </target>
+
+  <target name ="compile" depends="clean">
+     <javac srcdir="src" destdir="tomcat8\webapps\ROOT\WEB-INF\classes" failonerror="true" fork="true">
+       <classpath refid="common_library"> </classpath>
+     </javac>
+  </target>
+
+</project>
