@@ -4,6 +4,7 @@
       <root url="jar://$PROJECT_DIR$/tomcat8/lib/servlet-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/tomcat8/lib/simple-xml-2.7.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/tomcat8/lib/postgresql-42.1.1.jre6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tomcat8/lib/javax.persistence-2.0.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

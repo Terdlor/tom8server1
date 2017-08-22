@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-06-18.00:15:03.234</IntrospectionTimestamp>
-      <IntrospectionStateNumber>765</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-08-22.22:08:02.126</IntrospectionTimestamp>
+      <IntrospectionStateNumber>819</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -63,7 +63,7 @@
     </table>
     <table id="17" parent="3" name="mark">
       <ObjectId>16707</ObjectId>
-      <StateNumber>711</StateNumber>
+      <StateNumber>819</StateNumber>
     </table>
     <table id="18" parent="3" name="mark_item">
       <ObjectId>16730</ObjectId>
@@ -185,116 +185,121 @@
       <NotNull>1</NotNull>
       <StateNumber>708</StateNumber>
     </column>
-    <index id="39" parent="17" name="pk_mark_id">
+    <column id="39" parent="17" name="adddate">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>819</StateNumber>
+    </column>
+    <index id="40" parent="17" name="pk_mark_id">
       <ObjectId>16711</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="40" parent="17" name="pk_mark_id">
+    <key id="41" parent="17" name="pk_mark_id">
       <ObjectId>16712</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>pk_mark_id</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="41" parent="18" name="id_flavor">
+    <column id="42" parent="18" name="id_flavor">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>711</StateNumber>
     </column>
-    <column id="42" parent="18" name="id_sale">
+    <column id="43" parent="18" name="id_sale">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>711</StateNumber>
     </column>
-    <column id="43" parent="18" name="count">
+    <column id="44" parent="18" name="count">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>711</StateNumber>
     </column>
-    <column id="44" parent="18" name="price">
+    <column id="45" parent="18" name="price">
       <Position>4</Position>
       <DataType>numeric(10,2)|0</DataType>
       <StateNumber>711</StateNumber>
     </column>
-    <column id="45" parent="18" name="rang">
+    <column id="46" parent="18" name="rang">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <StateNumber>711</StateNumber>
     </column>
-    <column id="46" parent="18" name="note">
+    <column id="47" parent="18" name="note">
       <Position>6</Position>
       <DataType>varchar(200)|0</DataType>
       <StateNumber>711</StateNumber>
     </column>
-    <index id="47" parent="18" name="pk_mark_item">
+    <index id="48" parent="18" name="pk_mark_item">
       <ObjectId>16733</ObjectId>
       <ColNames>id_flavor
 id_sale</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="48" parent="18" name="pk_mark_item">
+    <key id="49" parent="18" name="pk_mark_item">
       <ObjectId>16734</ObjectId>
       <ColNames>id_flavor
 id_sale</ColNames>
       <UnderlyingIndexName>pk_mark_item</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="49" parent="18" name="fk_mark_item_flavor_id">
+    <foreign-key id="50" parent="18" name="fk_mark_item_flavor_id">
       <ObjectId>16735</ObjectId>
       <ColNames>id_flavor</ColNames>
       <RefTableName>mark</RefTableName>
       <RefKeyName>pk_mark_id</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="50" parent="18" name="fk_mark_item_sale_id">
+    <foreign-key id="51" parent="18" name="fk_mark_item_sale_id">
       <ObjectId>16740</ObjectId>
       <ColNames>id_sale</ColNames>
       <RefTableName>sale</RefTableName>
       <RefKeyName>pk_sale_id</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="51" parent="19" name="id">
+    <column id="52" parent="19" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>710</StateNumber>
       <DefaultExpression>nextval(&apos;sq_sale&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="52" parent="19" name="adress">
+    <column id="53" parent="19" name="adress">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <StateNumber>710</StateNumber>
     </column>
-    <column id="53" parent="19" name="note">
+    <column id="54" parent="19" name="note">
       <Position>3</Position>
       <DataType>varchar(200)|0</DataType>
       <StateNumber>710</StateNumber>
     </column>
-    <column id="54" parent="19" name="date">
+    <column id="55" parent="19" name="date">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>710</StateNumber>
     </column>
-    <index id="55" parent="19" name="pk_sale_id">
+    <index id="56" parent="19" name="pk_sale_id">
       <ObjectId>16728</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="56" parent="19" name="pk_sale_id">
+    <key id="57" parent="19" name="pk_sale_id">
       <ObjectId>16729</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>pk_sale_id</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="57" parent="20">
+    <argument id="58" parent="20">
       <Position>1</Position>
       <DataType>char|0</DataType>
     </argument>
-    <argument id="58" parent="20">
+    <argument id="59" parent="20">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>varchar|0</DataType>
     </argument>
